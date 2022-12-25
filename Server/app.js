@@ -4,15 +4,9 @@ const app= express();
 const CarModel = require('./models/CarModel');
 const { CarRouter } = require('./routes/CarRout');
 const mongoose = require('mongoose');
-
-
 // Connection URI
 const uri ="mongodb+srv://MoePochtenie:PuBespD0SBUf6Gyj@cluster0.djnqf.mongodb.net/test";
-
 // Create a new MongoClient
-
-
-
 async function run() {
   CarRouter(app);
   try {
@@ -30,21 +24,16 @@ catch (e) {
     console.log(e.message);
 }
 }
-
 run();
-
-
 app.get('/getcars',async (req, res) => {
-  const cursor = await CarModel.find({}).lean();
-  // res.send(cursor);
-  res.json({cursor:cursor})
+  const cars = await CarModel.find({}).lean();
+  console.log(`Request's been received for data fetch`);
+  res.json({cursor:cars})
 });
 
-
-
-app.get('/', (req, res) => {
-    res.send(Car);
-});
+// app.get('/', (req, res) => {
+//     res.send(Car);
+// });
 
 
 

@@ -1,18 +1,21 @@
 import React from "react";
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 function CarFetch(props) {
-    const [car, setCar] = React.useState([]);
+    const [car, setCar] = useState([]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         getCar();
     }, [])
 
     const getCar = async () => {
         await fetch('/getcars')
-            .then(cursor => cursor.json())
-            .then(cursor => setCar(cursor.cursor));
+            .then(result  => result.json())
+            .then(result  => setCar(result.cursor));
     }
+
+
     if (!car) {
         return <div>
             <div>Loading...</div>
@@ -25,8 +28,8 @@ function CarFetch(props) {
         </div>
     }
 
-    return <div className='flex_content'>
-        <div style={{backgroundColor:"red"}}>
+    return <div style={{backgroundColor:"green",width:"500px",height:"500px"}} >
+        <div style={{backgroundColor:"red",width:"200px",height:"200px"}}>
             {car?.map((cursor) => {
                 return <div>
                     <h2>{cursor.Brand}</h2>
@@ -34,6 +37,8 @@ function CarFetch(props) {
             })}
         </div>
     </div>
+
+  
 
 };
 
