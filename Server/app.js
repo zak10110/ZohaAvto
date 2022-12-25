@@ -22,8 +22,8 @@ async function run() {
        
     })
     mongoose.set('strictQuery', true);
-    app.listen(3000, () => {
-        console.log(`Server is working now on port ${3000}`);
+    app.listen(3001, () => {
+        console.log(`Server is working now on port ${3001}`);
     });
 }
 catch (e) {
