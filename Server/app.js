@@ -1,6 +1,9 @@
+
 const express=require ('express');
 const app= express();
-app.listen(3000,()=>{console.log("Gavno rabotaet")});
+var Car = new Object();
+
+
 
 const { MongoClient } = require("mongodb");
 
@@ -31,8 +34,8 @@ async function run() {
     // const result = await product.insertOne(doc);
     // console.log(`A document was inserted with the _id: ${result.insertedId}`);
     const cursor = product.find({});
-    await cursor.forEach(doc => console.log(doc));
-    
+    await cursor.forEach(doc => Car={doc});
+    console.log(Car);
     console.log("Connected successfully to server");
   } finally {
     // Ensures that the client will close when you finish/error
@@ -42,4 +45,12 @@ async function run() {
 run().catch(console.dir);
 
 
+
+
+
+app.get('/', (req, res) => {
+    res.send(Car);
+});
+
+app.listen(3000,()=>{console.log("Gavno rabotaet")});
 
