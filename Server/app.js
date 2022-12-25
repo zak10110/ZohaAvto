@@ -1,11 +1,9 @@
 
 const express=require ('express');
 const app= express();
-
-
-
-const { MongoClient } = require("mongodb");
+const CarModel = require('./models/CarModel');
 const { CarRouter } = require('./routes/CarRout');
+const mongoose = require('mongoose');
 
 
 // Connection URI
@@ -13,39 +11,34 @@ const uri ="mongodb+srv://MoePochtenie:PuBespD0SBUf6Gyj@cluster0.djnqf.mongodb.n
 
 // Create a new MongoClient
 
-const client = new MongoClient(uri);
 
 
 async function run() {
+  CarRouter(app);
   try {
-    // Connect the client to the server (optional starting in v4.7)
-    await client.connect();
-
-    // Establish and verify connection
-    await client.db("MoePochtenie").command({ ping: 1 });
-    const database = client.db("ZohaAuto");
-    const product = database.collection("Product");
-    // // create a document to insert
-    // const doc = {
-    //     Brand: "Das Auto3",Model:"Your Mam", Mileage: "120000",
-    //     Colour:"Red",Price:"4000",EngineVolume:"2.5",TypeOfDrive:"four-wheel drive",
-    //     GearboxType:"Manual Transmission",YearOfIssue:"2018",FuelType:"Petrol",LinkToPicture:"https://static.wikia.nocookie.net/my-summer-car/images/4/4a/%D0%93%D0%B8%D1%84%D1%83.jpg/revision/latest/scale-to-width-down/1200?cb=20201127173623&path-prefix=ru"
-    // }
-    // const result = await product.insertOne(doc);
-    // console.log(`A document was inserted with the _id: ${result.insertedId}`);
-    const cursor = product.find({});
-    await cursor.forEach(doc => Car={doc});
-    console.log(Car);
-    console.log("Connected successfully to server");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-  await CarRouter(app);
+    await mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+       
+    })
+    mongoose.set('strictQuery', true);
+    app.listen(3000, () => {
+        console.log(`Server is working now on port ${3000}`);
+    });
 }
-run().catch(console.dir);
+catch (e) {
+    console.log(e.message);
+}
+}
+
+run();
 
 
+app.get('/getcars',async (req, res) => {
+  const cursor = await CarModel.find({}).lean();
+  // res.send(cursor);
+  res.json({cursor:cursor})
+});
 
 
 
@@ -53,5 +46,5 @@ app.get('/', (req, res) => {
     res.send(Car);
 });
 
-app.listen(3000,()=>{console.log("Gavno rabotaet")});
+
 
