@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import Ya_NA_Sdache_Reacta from './TochnoNePorno.gif';
+
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 function CarFetch(props) {
@@ -34,7 +34,7 @@ function CarFetch(props) {
             {car?.map((cursor) => {
                 return <div>
                     <h2>{cursor.Brand}{cursor.Model}{cursor.Mileage}</h2>
-                    <img src={Ya_NA_Sdache_Reacta} style={{width:"150px",height:"150px"}}></img>
+                   
                 </div>
             })}
         </div>
