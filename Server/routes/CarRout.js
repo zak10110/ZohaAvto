@@ -1,45 +1,39 @@
-const express = require("express");
-const carRouter = express.Router();
-const Cars = require("../models/CarModel.js");
+const CarModel = require("../models/CarModel");
 
-carRouter.post("/api/addCar", async (req, res) => {
-    const {
-        Brand,
-        Model,
-        Mileage,
-        Colour,
-        Price,
-        EngineVolume,
-        TypeOfDrive,
-        GearboxType,
-        YearOfIssue,
-        FuelType,
-        LinkToPicture,
-    } = req.body;
-    var car = new Cars.Car({
-        Brand: Brand,
-        Model: Model,
-        Mileage: Mileage,
-        Colour: Colour,
-        Price: Price,
-        EngineVolume: EngineVolume,
-        TypeOfDrive: TypeOfDrive,
-        GearboxType: GearboxType,
-        YearOfIssue: YearOfIssue,
-        FuelType: FuelType,
+
+async function CarRouter(app){
+app.post('/api/addcar',async(req,res)=>{
+    let Brand=req.body.Brand;
+    let Model=req.body.Model;
+    let Mileage=req.body.Mileage;
+    let Colour=req.body.Colour;
+    let Price=req.body.Price;
+    let EngineVolume=req.body.EngineVolume;
+    let TypeOfDrive=req.body.TypeOfDrive;
+    let GearboxType=req.body.GearboxType;
+    let YearOfIssue=req.body.YearOfIssue;
+    let FuelType=req.body.FuelType;
+    let LinkToPicture=req.body.LinkToPicture;
+
+    const car=new CarModel({
+        Brand:Brand,
+        Model:Model,
+        Mileage:Mileage,
+        Colour:Colour,
+        Price:Price,
+        EngineVolume:EngineVolume,
+        TypeOfDrive:TypeOfDrive,
+        GearboxType:GearboxType,
+        YearOfIssue:YearOfIssue,
+        FuelType:FuelType,
         LinkToPicture:LinkToPicture,
-    });
-    await car
-      .save()
-      .then(() => {
-        res.json({ isAdded: true });
-      })
-      .catch((err) => {
-        if (err) {
-          res.status(400).json({ error: err });
-        }
-      });
-  });
-  
-  module.exports = carRouter;
 
+    })
+    await car.save();
+})
+
+
+
+    
+}
+module.exports={CarRouter};
