@@ -2,10 +2,10 @@
 const express=require ('express');
 const app= express();
 
-const carRouter = require("./routes/CarRouter.js");
 
 
 const { MongoClient } = require("mongodb");
+const { CarRouter } = require('./routes/CarRout');
 
 
 // Connection URI
@@ -41,6 +41,7 @@ async function run() {
     // Ensures that the client will close when you finish/error
     await client.close();
   }
+  await CarRouter(app);
 }
 run().catch(console.dir);
 

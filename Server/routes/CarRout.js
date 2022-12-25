@@ -1,8 +1,7 @@
 const CarModel = require("../models/CarModel");
-
-
 async function CarRouter(app){
-app.post('/api/addcar',async(req,res)=>{
+app.get('/api/addcar',async(req,res)=>{
+    console.log("NU i Gavno");
     let Brand=req.body.Brand;
     let Model=req.body.Model;
     let Mileage=req.body.Mileage;
@@ -30,10 +29,6 @@ app.post('/api/addcar',async(req,res)=>{
 
     })
     await car.save();
-})
-
-
-
-    
+})  
 }
 module.exports={CarRouter};
