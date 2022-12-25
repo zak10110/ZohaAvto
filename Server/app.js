@@ -21,17 +21,17 @@ async function run() {
     // Establish and verify connection
     await client.db("MoePochtenie").command({ ping: 1 });
     const database = client.db("ZohaAuto");
-    const haiku = database.collection("Product");
-    // create a document to insert
-    const doc = {
-        Brand: "Das Auto2",Model:"Your Mam", Mileage: "120000",
-        Colour:"Red",Price:"4000",EngineVolume:"2.5",TypeOfDrive:"four-wheel drive",
-        GearboxType:"Manual Transmission",YearOfIssue:"2018",FuelType:"Petrol",LinkToPicture:"https://static.wikia.nocookie.net/my-summer-car/images/4/4a/%D0%93%D0%B8%D1%84%D1%83.jpg/revision/latest/scale-to-width-down/1200?cb=20201127173623&path-prefix=ru"
-    }
-    const result = await haiku.insertOne(doc);
-    console.log(`A document was inserted with the _id: ${result.insertedId}`);
-
-
+    const product = database.collection("Product");
+    // // create a document to insert
+    // const doc = {
+    //     Brand: "Das Auto3",Model:"Your Mam", Mileage: "120000",
+    //     Colour:"Red",Price:"4000",EngineVolume:"2.5",TypeOfDrive:"four-wheel drive",
+    //     GearboxType:"Manual Transmission",YearOfIssue:"2018",FuelType:"Petrol",LinkToPicture:"https://static.wikia.nocookie.net/my-summer-car/images/4/4a/%D0%93%D0%B8%D1%84%D1%83.jpg/revision/latest/scale-to-width-down/1200?cb=20201127173623&path-prefix=ru"
+    // }
+    // const result = await product.insertOne(doc);
+    // console.log(`A document was inserted with the _id: ${result.insertedId}`);
+    const cursor = product.find({});
+    await cursor.forEach(doc => console.log(doc));
     
     console.log("Connected successfully to server");
   } finally {
@@ -40,5 +40,6 @@ async function run() {
   }
 }
 run().catch(console.dir);
+
 
 
