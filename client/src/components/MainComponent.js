@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
+import Ya_NA_Sdache_Reacta from './TochnoNePorno.gif';
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 function CarFetch(props) {
@@ -10,7 +11,7 @@ function CarFetch(props) {
     }, [])
 
     const getCar = async () => {
-        await fetch('/getcars')
+        await fetch('/api/getcars')
             .then(result  => result.json())
             .then(result  => setCar(result.cursor));
     }
@@ -32,7 +33,8 @@ function CarFetch(props) {
         <div style={{backgroundColor:"red",width:"200px",height:"200px"}}>
             {car?.map((cursor) => {
                 return <div>
-                    <h2>{cursor.Brand}</h2>
+                    <h2>{cursor.Brand}{cursor.Model}{cursor.Mileage}</h2>
+                    <img src={Ya_NA_Sdache_Reacta} style={{width:"150px",height:"150px"}}></img>
                 </div>
             })}
         </div>

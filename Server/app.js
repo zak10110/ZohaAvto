@@ -25,7 +25,7 @@ catch (e) {
 }
 }
 run();
-app.get('/getcars',async (req, res) => {
+app.get('/api/getcars',async (req, res) => {
   const cars = await CarModel.find({}).lean();
   console.log(`Request's been received for data fetch`);
   res.json({cursor:cars})

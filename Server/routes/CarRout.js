@@ -14,6 +14,18 @@ app.get('/api/addcar',async(req,res)=>{
     let FuelType=req.body.FuelType;
     let LinkToPicture=req.body.LinkToPicture;
 
+    // let Brand="Huy";
+    // let Model="GAvno";
+    // let Mileage="Ebanina";
+    // let Colour="Nanavizu";
+    // let Price="Ebaniy";
+    // let EngineVolume="Web";
+    // let TypeOfDrive="Suka";
+    // let GearboxType="Idet vse v pizdy";
+    // let YearOfIssue="hh";
+    // let FuelType="asdadad";
+    // let LinkToPicture="ashdjadhjad";
+
 
     const car=new CarModel({
         Brand:Brand,
