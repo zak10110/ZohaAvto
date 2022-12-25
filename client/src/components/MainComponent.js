@@ -1,9 +1,9 @@
-
+import React from "react";
 
 function CarFetch(props) {
-    const [car, setCar] = useState([]);
+    const [car, setCar] = React.useState([]);
 
-    useEffect(() => {
+    React.useEffect(() => {
         getCar();
     }, [])
 
@@ -25,8 +25,8 @@ function CarFetch(props) {
     }
 
     return <div className='flex_content'>
-        <div>
-            {car?.map((cursor, index) => {
+        <div style={{backgroundColor:"red"}}>
+            {car?.map((cursor) => {
                 return <div>
                     <h2>{cursor.Brand}</h2>
                 </div>
@@ -36,4 +36,4 @@ function CarFetch(props) {
 
 };
 
-
+export default CarFetch;
