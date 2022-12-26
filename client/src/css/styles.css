@@ -3,14 +3,14 @@ margin-left: 50px;
 margin-top: 50px;
 width: 250px;
 height: 500px;
-background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+background: url(https://img.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg?w=1380&t=st=1672030393~exp=1672030993~hmac=1057c4550da19dd8ac5ad09c5bc9769d244b91cacefd10f19ca53d8b8b399c80);
 border-radius: 10px;
 }
 
 .back{
     width: auto;
     height: 2000px;
-    background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+    background: url(https://img.freepik.com/free-photo/white-concrete-wall_53876-92803.jpg?w=1380&t=st=1672030148~exp=1672030748~hmac=3e03128217039d61910aa2ca4928e75bd48e622b1a4068a8b7cf1c5f4ff5343f);
     /* background-color: aquamarine; */
     display:flex;
 }
@@ -69,7 +69,7 @@ flex-wrap: wrap;
     box-sizing: border-box;
  }
  body {
-    background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+    background: url(https://img.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg?w=1380&t=st=1672030393~exp=1672030993~hmac=1057c4550da19dd8ac5ad09c5bc9769d244b91cacefd10f19ca53d8b8b399c80);
  }
  .postcard {
     max-width: 350px;
