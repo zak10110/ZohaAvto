@@ -30,6 +30,8 @@ function AddCarApp() {
     
   }
   return (
+
+  
     <div className="postcard">
     <div className="form-row">
     <label >Brand</label><input type="text" id="Brand" required></input>
@@ -67,6 +69,7 @@ function AddCarApp() {
     <div className="form-row">
     <input onClick={AddCar} type="submit" value="Отправить сообщение"></input>
     </div>
+    <a href="http://localhost:3000/" class="floating-button">Go Back</a>
     </div>
 
   );

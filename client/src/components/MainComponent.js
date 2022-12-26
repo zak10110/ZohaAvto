@@ -38,10 +38,10 @@ function CarFetch(props) {
                     <img className="cardimg" src={cursor.LinkToPicture}></img>
                     <h4>Марка:{cursor.Brand} Модель:{cursor.Model} Год выпуска:{cursor.YearOfIssue}</h4>
                     <h5>Пробег:{cursor.Mileage}</h5>
-                    <h5>{cursor.TypeOfDrive}{cursor.EngineVolume}</h5>
-                    <h5>{cursor.GearboxType}{cursor.FuelType}</h5>
-                    <h5>{cursor.Price}</h5>
-                    <a className="floating-button">Button</a>
+                    <h5>Тип Привода:{cursor.TypeOfDrive} Обьем Двигателя:{cursor.EngineVolume}</h5>
+                    <h5>Тип коробки:{cursor.GearboxType} Тип Топлива:{cursor.FuelType}</h5>
+                    <h5>Цена:{cursor.Price}$</h5>
+                    <a className="floating-button">Buy</a>
                     
                     
                 </div>
