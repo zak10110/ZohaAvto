@@ -1,0 +1,35 @@
+.card{
+
+background-color: blueviolet;
+margin-left: 20px;
+margin-top: 50px;
+width: 300px;
+height: 400px;
+
+}
+
+.back{
+
+    width: auto;
+    height: 2000px;
+    background-color: aquamarine;
+    margin-top: -70px;
+    display:flex;
+}
+
+.cardimg{
+width: 300px;
+height: 200px;
+
+}
+
+.divforcards{
+
+width: 1500px;
+display:flex;
+align-items: flex-start;
+background-color: blanchedalmond;
+margin-left: 150px;
+height: 1500px;
+
+}

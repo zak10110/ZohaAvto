@@ -1,6 +1,6 @@
 import React from "react";
+import '../css/styles.css';
 import { useState, useEffect } from 'react';
-
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 function CarFetch(props) {
@@ -29,10 +29,11 @@ function CarFetch(props) {
         </div>
     }
 
-    return <div style={{backgroundColor:"green",width:"500px",height:"500px"}} >
-        <div style={{backgroundColor:"red",width:"200px",height:"200px"}}>
+    return <div className="back" >
+        <div className="divforcards">
             {car?.map((cursor) => {
-                return <div>
+                return <div className="card">
+                    <img className="cardimg" src={cursor.LinkToPicture}></img>
                     <h2>{cursor.Brand}{cursor.Model}{cursor.Mileage}</h2>
                    
                 </div>

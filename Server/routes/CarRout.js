@@ -24,7 +24,7 @@ app.get('/api/addcar',async(req,res)=>{
     // let GearboxType="Idet vse v pizdy";
     // let YearOfIssue="hh";
     // let FuelType="asdadad";
-    // let LinkToPicture="ashdjadhjad";
+    // let LinkToPicture="https://i.ytimg.com/vi/NxAgJSeVZqI/maxresdefault.jpg";
 
 
     const car=new CarModel({
