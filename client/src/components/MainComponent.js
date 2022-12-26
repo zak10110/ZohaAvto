@@ -34,14 +34,18 @@ function CarFetch(props) {
             {car?.map((cursor) => {
                 return <div className="card">
                     <img className="cardimg" src={cursor.LinkToPicture}></img>
-                    <h2>{cursor.Brand}{cursor.Model}{cursor.Mileage}</h2>
-                   
+                    <h4>{cursor.Brand} {cursor.Model} {cursor.YearOfIssue}</h4>
+                    <h5>{cursor.Mileage}</h5>
+                    <h5>{cursor.TypeOfDrive}{cursor.EngineVolume}</h5>
+                    <h5>{cursor.GearboxType}{cursor.FuelType}</h5>
+                    <h5>{cursor.Price}</h5>
+                    <a href="" class="floating-button">Button</a>
                 </div>
             })}
         </div>
     </div>
 
-  
+
 
 };
 

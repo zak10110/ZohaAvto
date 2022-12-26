@@ -1,35 +1,64 @@
 .card{
-
-background-color: blueviolet;
-margin-left: 20px;
+margin-left: 50px;
 margin-top: 50px;
-width: 300px;
-height: 400px;
-
+width: 250px;
+height: 500px;
+background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+border-radius: 10px;
 }
 
 .back{
-
     width: auto;
     height: 2000px;
-    background-color: aquamarine;
-    margin-top: -70px;
+    background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+    /* background-color: aquamarine; */
     display:flex;
 }
 
 .cardimg{
-width: 300px;
+width: 250px;
 height: 200px;
+border-radius: 10px;
 
 }
 
 .divforcards{
 
-width: 1500px;
+width: 1000px;
 display:flex;
 align-items: flex-start;
 background-color: blanchedalmond;
 margin-left: 150px;
-height: 1500px;
-
+height: 2000px;
+background: url(https://gamerwall.pro/uploads/posts/2022-05/1652381179_10-gamerwall-pro-p-minimalistichnii-pattern-oboi-krasivo-11.jpg);
+margin-left: 600px;
+flex-wrap: wrap;
 }
+
+
+.floating-button {
+    text-decoration: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+    margin-left: 50px;
+  }
+  .floating-button:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+  }
