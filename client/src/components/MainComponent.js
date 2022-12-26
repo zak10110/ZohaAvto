@@ -30,6 +30,7 @@ function CarFetch(props) {
     }
 
     return <div className="back" >
+        <a href="http://localhost:3000/addcard" class="floating-button">Add Card</a>
         <div className="divforcards">
             {car?.map((cursor) => {
                 return <div className="card">
@@ -39,7 +40,9 @@ function CarFetch(props) {
                     <h5>{cursor.TypeOfDrive}{cursor.EngineVolume}</h5>
                     <h5>{cursor.GearboxType}{cursor.FuelType}</h5>
                     <h5>{cursor.Price}</h5>
-                    <a href="" class="floating-button">Button</a>
+                    <a className="floating-button">Button</a>
+                    
+                    
                 </div>
             })}
         </div>

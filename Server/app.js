@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 // Connection URI
 const uri ="mongodb+srv://MoePochtenie:PuBespD0SBUf6Gyj@cluster0.djnqf.mongodb.net/test";
 // Create a new MongoClient
+app.use(express.json());
 async function run() {
   CarRouter(app);
   try {
